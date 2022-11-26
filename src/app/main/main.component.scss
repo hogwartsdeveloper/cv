@@ -1,0 +1,14 @@
+:host::ng-deep {
+  position: relative;
+}
+
+.author {
+  position: absolute;
+  bottom: -58px;
+}
+
+.quote {
+  background-color: #282c33;
+  font-size: 4rem;
+  height: 10px;
+}
