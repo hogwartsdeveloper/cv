@@ -4,10 +4,8 @@ import { menuItems } from './models/toolbar-item.model';
 import { NgClass, NgForOf } from '@angular/common';
 
 @Component({
-  standalone: true,
   selector: 'app-toolbar',
   templateUrl: './toolbar.component.html',
-  imports: [MatIconModule, NgForOf, NgClass],
   styleUrls: ['./toolbar.component.scss'],
 })
 export class ToolbarComponent implements OnInit {

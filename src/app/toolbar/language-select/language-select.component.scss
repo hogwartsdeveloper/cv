@@ -1,0 +1,50 @@
+.lang-menu {
+  position: relative;
+}
+
+.selected-lang {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  line-height: 2;
+}
+
+.selected-lang:before {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin-right: 5px;
+}
+
+.lang-menu ul {
+  position: absolute;
+  border-radius: 1px;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+  display: none;
+}
+
+.lang-menu ul li {
+  list-style: none;
+  display: flex;
+  transition: 0.25s;
+}
+
+.lang-menu ul li div {
+  width: 75px;
+  display: flex;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.selected-lang.en:before {
+  background-image: url("/assets/img/united-states.png");
+}
+
+.selected-lang.kz:before {
+  background-image: url("/assets/img/kazakhstan.png");
+}
+
+.selected-lang.ru:before {
+  background-image: url("/assets/img/russia.png");
+}

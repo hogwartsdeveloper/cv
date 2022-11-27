@@ -38,7 +38,7 @@
       />
     </svg>
   </button>
-  <div class="hidden sm:block space-x-4">
+  <div class="hidden sm:flex space-x-4">
     <a
       *ngFor="let item of menuItems; let index = index"
       [ngClass]="{
@@ -47,8 +47,9 @@
       }"
       href="#"
       class="px-3 py-2 rounded-md text-sm font-medium"
-      >{{ "#" + item }}</a
+      >{{ "#" + (item | translate) }}</a
     >
+    <app-language-select></app-language-select>
   </div>
 </div>
 
@@ -62,7 +63,7 @@
       }"
       href="#"
       class="block px-3 py-2 rounded-md text-base font-medium"
-      >{{ "#" + item }}</a
+      >{{ "#" + (item | translate) }}</a
     >
   </div>
 </div>

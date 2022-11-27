@@ -1,0 +1,21 @@
+<div
+  class="lang-menu"
+  (mousemove)="openLangMenu(langMenu)"
+  (mouseleave)="closeLangMenu(langMenu)"
+>
+  <div class="selected-lang" [ngClass]="selectedLanguage.name">
+    {{ selectedLanguage.name }}
+  </div>
+  <ul #langMenu class="z-10">
+    <ng-container *ngFor="let lang of languages">
+      <li
+        class="hover:bg-fuchsia-500 rounded-md"
+        (click)="onSelectLang(lang); closeLangMenu(langMenu)"
+      >
+        <div class="selected-lang" [ngClass]="lang.name">
+          {{ lang.name }}
+        </div>
+      </li>
+    </ng-container>
+  </ul>
+</div>
