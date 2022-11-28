@@ -8,6 +8,7 @@ import { ToolbarModule } from './toolbar/toolbar.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { ProjectsModule } from './projects/projects.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,6 +25,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
         deps: [HttpClient],
       },
     }),
+    ProjectsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
