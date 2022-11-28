@@ -3,10 +3,17 @@ import { MatButtonModule } from '@angular/material/button';
 import { TranslateModule } from '@ngx-translate/core';
 import { BtnComponent } from '../ui/btn/btn.component';
 import { LogoComponent } from '../ui/logo/logo.component';
+import { DotsComponent } from '../ui/dots/dots.component';
 
 @Component({
   standalone: true,
-  imports: [MatButtonModule, TranslateModule, BtnComponent, LogoComponent],
+  imports: [
+    MatButtonModule,
+    TranslateModule,
+    BtnComponent,
+    LogoComponent,
+    DotsComponent,
+  ],
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss'],
