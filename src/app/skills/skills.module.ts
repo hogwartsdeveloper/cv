@@ -5,9 +5,10 @@ import { SectionTitleComponent } from '../ui/section-title/section-title.compone
 import { LogoComponent } from '../ui/logo/logo.component';
 import { DotsComponent } from '../ui/dots/dots.component';
 import { SquareComponent } from '../ui/square/square.component';
+import { SkillItemComponent } from './skill-item/skill-item.component';
 
 @NgModule({
-  declarations: [SkillsComponent],
+  declarations: [SkillsComponent, SkillItemComponent],
   imports: [
     CommonModule,
     SectionTitleComponent,
