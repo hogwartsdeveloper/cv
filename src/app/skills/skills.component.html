@@ -1,19 +1,23 @@
 <div class="mt-24">
   <app-section-title [sectionTitle]="'skills'"></app-section-title>
   <div class="flex justify-between">
-    <div class="relative">
+    <div class="flex-1 relative">
       <app-dots class="absolute top-10 left-6 w-14"></app-dots>
       <app-dots class="absolute top-28 left-52 w-14"></app-dots>
-      <app-logo class="absolute top-36 left-10 w-1/12"></app-logo>
+      <app-logo class="absolute top-36 left-10 w-1/5"></app-logo>
       <app-square class="absolute top-4 left-72"></app-square>
       <app-square
         class="absolute top-36 left-96"
-        [width]="10"
-        [height]="10"
+        [width]="52"
+        [height]="52"
       ></app-square>
     </div>
-    <div class="items">
-      <app-skill-item></app-skill-item>
+    <div class="flex-1 flex flex-wrap justify-end space-x-4 space-y-4">
+      <app-skill-item [skill]="language"></app-skill-item>
+      <app-skill-item [skill]="frameworks"></app-skill-item>
+      <app-skill-item [skill]="databases"></app-skill-item>
+      <app-skill-item [skill]="other"></app-skill-item>
+      <app-skill-item [skill]="tools"></app-skill-item>
     </div>
   </div>
 </div>
