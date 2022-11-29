@@ -10,6 +10,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ProjectsModule } from './projects/projects.module';
 import { SkillsModule } from './skills/skills.module';
+import { AboutMeComponent } from './about-me/about-me.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,6 +29,7 @@ import { SkillsModule } from './skills/skills.module';
     }),
     ProjectsModule,
     SkillsModule,
+    AboutMeComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],
