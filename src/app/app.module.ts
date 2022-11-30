@@ -11,6 +11,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ProjectsModule } from './projects/projects.module';
 import { SkillsModule } from './skills/skills.module';
 import { AboutMeComponent } from './about-me/about-me.component';
+import { ContactsComponent } from './contacts/contacts.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -30,6 +31,7 @@ import { AboutMeComponent } from './about-me/about-me.component';
     ProjectsModule,
     SkillsModule,
     AboutMeComponent,
+    ContactsComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],
