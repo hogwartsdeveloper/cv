@@ -14,5 +14,23 @@
     "thisMomentPoint": "HardCode",
     "quote": "With great power comes great electricity bill",
     "quoteAuthor": "- D.r Who"
+  },
+  "section": {
+    "projects": "projects",
+    "skills": "skills"
+  },
+  "project": {
+    "tic-tac": {
+      "title": "Tic tac toe",
+      "description": "Game for two players who take turns marking the spaces in a three-by-three grid with X or O"
+    },
+    "cloud-hub": {
+      "title": "Cloud hub",
+      "description": "Is a cloud service that allows users to store files on \"cloud\" servers and distribute them to other users on the Internet"
+    },
+    "animal": {
+      "title":"Animal pedia",
+      "description": "introduce users to animals that are on the verge of extinction."
+    }
   }
 }
