@@ -12,6 +12,7 @@ import { ProjectsModule } from './projects/projects.module';
 import { SkillsModule } from './skills/skills.module';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { ContactsComponent } from './contacts/contacts.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -32,6 +33,7 @@ import { ContactsComponent } from './contacts/contacts.component';
     SkillsModule,
     AboutMeComponent,
     ContactsComponent,
+    FooterComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],
