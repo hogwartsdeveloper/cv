@@ -27,3 +27,9 @@ line-height: 1;
         .icon-linkedin:before {
     content: "\f103";
     }
+        .icon-menu-close:before {
+    content: "\f104";
+    }
+        .icon-menu:before {
+    content: "\f105";
+    }

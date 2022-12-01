@@ -24,6 +24,8 @@ $icons-map: (
     "email": "\f101",
     "github": "\f102",
     "linkedin": "\f103",
+    "menu-close": "\f104",
+    "menu": "\f105",
 );
 
         .icon-email:before {
@@ -34,4 +36,10 @@ $icons-map: (
     }
         .icon-linkedin:before {
     content: map-get($icons-map, "linkedin");
+    }
+        .icon-menu-close:before {
+    content: map-get($icons-map, "menu-close");
+    }
+        .icon-menu:before {
+    content: map-get($icons-map, "menu");
     }
