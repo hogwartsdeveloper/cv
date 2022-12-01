@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "icons": "fantasticon src/assets/svgs -o src/assets/custom-icons"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +23,7 @@
     "@angular/router": "^14.2.0",
     "@ngx-translate/core": "^14.0.0",
     "@ngx-translate/http-loader": "^7.0.0",
+    "fantasticon": "^2.0.0",
     "prettier": "^2.8.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

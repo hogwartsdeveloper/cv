@@ -37,6 +37,7 @@ $interactive-cv-theme: mat.define-light-theme(
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "assets/custom-icons/icons.css";
 html,
 body {
   height: 100%;
@@ -81,4 +82,8 @@ body {
   font-family: "Fira Code";
   font-size: 16px;
   color: #fff;
+}
+
+.icon {
+  font-size: 28px;
 }
