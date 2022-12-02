@@ -39,6 +39,5 @@ export class ToolbarComponent implements OnInit {
         l.nativeElement.classList.remove('bg-fuchsia-500');
       }
     });
-    console.log(link);
   }
 }
