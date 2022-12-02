@@ -1,3 +1,10 @@
 a {
   transition: 0.4s;
 }
+
+.toolbar {
+  position: sticky;
+  top: 0;
+  background-color: #282c33;
+  z-index: 100;
+}
