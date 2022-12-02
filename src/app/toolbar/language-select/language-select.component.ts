@@ -17,7 +17,20 @@ export class LanguageSelectComponent implements OnInit {
   constructor(private translateService: TranslateService) {}
 
   ngOnInit(): void {
-    this.translateService.use(this.selectedLanguage.name);
+    const currentLang =
+      this.translateService.currentLang ?? this.translateService.defaultLang;
+
+    switch (currentLang) {
+      case 'en':
+        this.selectedLanguage = { value: LanguageType.En, name: 'en' };
+        break;
+      case 'kz':
+        this.selectedLanguage = { value: LanguageType.Kz, name: 'kz' };
+        break;
+      case 'ru':
+        this.selectedLanguage = { value: LanguageType.Ru, name: 'ru' };
+        break;
+    }
   }
 
   openLangMenu(menu: HTMLUListElement) {
