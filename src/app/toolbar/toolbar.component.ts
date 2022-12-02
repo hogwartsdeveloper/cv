@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
-import { menuItems } from './models/toolbar-item.model';
-import { NgClass, NgForOf } from '@angular/common';
+import { IMenuLink, menuItems } from './models/toolbar-item.model';
 
 @Component({
   selector: 'app-toolbar',
@@ -9,7 +7,7 @@ import { NgClass, NgForOf } from '@angular/common';
   styleUrls: ['./toolbar.component.scss'],
 })
 export class ToolbarComponent implements OnInit {
-  menuItems = menuItems;
+  menuItems: IMenuLink[] = menuItems;
   openMenu: boolean = false;
 
   constructor() {}

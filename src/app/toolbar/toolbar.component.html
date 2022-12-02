@@ -23,9 +23,9 @@
         'bg-fuchsia-500': index === 0,
         'hover:bg-fuchsia-500': index !== 0
       }"
-      href="#"
+      [href]="'#' + item.link"
       class="px-3 py-2 rounded-md text-sm font-medium"
-      >{{ "#" + (item | translate) }}</a
+      >{{ "#" + (item.name | translate) }}</a
     >
     <app-language-select></app-language-select>
   </div>
@@ -39,9 +39,9 @@
         'bg-fuchsia-500': index === 0,
         'hover:bg-fuchsia-500': index !== 0
       }"
-      href="#"
+      [href]="item.link"
       class="block px-3 py-2 rounded-md text-base font-medium"
-      >{{ "#" + (item | translate) }}</a
+      >{{ "#" + (item.name | translate) }}</a
     >
   </div>
 </div>
