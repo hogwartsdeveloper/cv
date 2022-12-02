@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  OnInit,
+  QueryList,
+  ViewChildren,
+} from '@angular/core';
 import { IMenuLink, menuItems } from './models/toolbar-item.model';
 
 @Component({
@@ -9,6 +15,8 @@ import { IMenuLink, menuItems } from './models/toolbar-item.model';
 export class ToolbarComponent implements OnInit {
   menuItems: IMenuLink[] = menuItems;
   openMenu: boolean = false;
+
+  @ViewChildren('links') links: QueryList<ElementRef>;
 
   constructor() {}
 
@@ -21,5 +29,16 @@ export class ToolbarComponent implements OnInit {
     } else {
       menu.classList.add('hidden');
     }
+  }
+
+  click(link: HTMLAnchorElement) {
+    this.links.forEach((l) => {
+      if (link === l.nativeElement) {
+        l.nativeElement.classList.add('bg-fuchsia-500');
+      } else {
+        l.nativeElement.classList.remove('bg-fuchsia-500');
+      }
+    });
+    console.log(link);
   }
 }

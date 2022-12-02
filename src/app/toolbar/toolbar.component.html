@@ -18,13 +18,14 @@
   </button>
   <div class="hidden sm:flex space-x-4">
     <a
+      #links
+      class="px-3 py-2 rounded-md text-sm font-medium hover:bg-fuchsia-500"
       *ngFor="let item of menuItems; let index = index"
       [ngClass]="{
-        'bg-fuchsia-500': index === 0,
-        'hover:bg-fuchsia-500': index !== 0
+        'bg-fuchsia-500': index === 0
       }"
       [href]="'#' + item.link"
-      class="px-3 py-2 rounded-md text-sm font-medium"
+      (click)="click(links)"
       >{{ "#" + (item.name | translate) }}</a
     >
     <app-language-select></app-language-select>
