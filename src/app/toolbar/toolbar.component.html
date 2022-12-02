@@ -49,6 +49,12 @@
 
 <div class="hidden sm:flex fixed left-2 top-0 flex-col items-center">
   <div class="h-60 w-0.5 bg-gray-500"></div>
-  <span class="icon icon-github -mb-3"></span>
-  <span class="icon icon-linkedin"></span>
+
+  <a
+    *ngFor="let media of medias"
+    target="_blank"
+    class="icon -mb-3 hover:text-fuchsia-400"
+    [href]="media.link"
+    [ngClass]="media.icon"
+  ></a>
 </div>

@@ -11,9 +11,13 @@
     <div>
       <h2 class="text-2xl">{{ "footer.media" | translate }}</h2>
       <div class="flex">
-        <span class="icon icon-github"></span>
-
-        <span class="icon icon-linkedin"></span>
+        <a
+          *ngFor="let media of medias"
+          target="_blank"
+          class="icon hover:text-fuchsia-400"
+          [href]="media.link"
+          [ngClass]="media.icon"
+        ></a>
       </div>
     </div>
   </div>

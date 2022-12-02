@@ -6,6 +6,7 @@ import {
   ViewChildren,
 } from '@angular/core';
 import { IMenuLink, menuItems } from './models/toolbar-item.model';
+import { IMedia, medias } from '../models/media.model';
 
 @Component({
   selector: 'app-toolbar',
@@ -15,6 +16,7 @@ import { IMenuLink, menuItems } from './models/toolbar-item.model';
 export class ToolbarComponent implements OnInit {
   menuItems: IMenuLink[] = menuItems;
   openMenu: boolean = false;
+  medias: IMedia[] = medias;
 
   @ViewChildren('links') links: QueryList<ElementRef>;
 
