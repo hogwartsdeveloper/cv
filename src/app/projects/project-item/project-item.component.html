@@ -9,11 +9,11 @@
     <div class="flex space-x-4 mt-3">
       <app-btn
         *ngIf="project?.live"
-        [btnText]="'Live <~>'"
+        [btnText]="'project.btn.live' | translate"
         (click)="followingLink(project?.live)"
       ></app-btn>
       <app-btn
-        [btnText]="'code >='"
+        [btnText]="'project.btn.code' | translate"
         (click)="followingLink(project?.code)"
       ></app-btn>
     </div>

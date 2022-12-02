@@ -22,15 +22,39 @@
   "project": {
     "tic-tac": {
       "title": "Tic tac toe",
-      "description": "Game for two players who take turns marking the spaces in a three-by-three grid with X or O"
+      "description": "Game for two players who take turns marking the spaces in a three-by-three grid with X or O."
     },
     "cloud-hub": {
       "title": "Cloud hub",
-      "description": "Is a cloud service that allows users to store files on \"cloud\" servers and distribute them to other users on the Internet"
+      "description": "Is a cloud service that allows users to store files on \"cloud\" servers and distribute them to other users on the Internet."
     },
     "animal": {
       "title":"Animal pedia",
       "description": "introduce users to animals that are on the verge of extinction."
+    },
+    "btn": {
+      "live": "live <~>",
+      "code": "code >="
     }
+  },
+  "skill": {
+    "language": "Language",
+    "framework": "Frameworks",
+    "database": "Databases",
+    "other": "Other",
+    "tool": "Tools"
+  },
+  "about-me": {
+    "hello": "Hello, i’m Zhannur!",
+    "me": "I'm a software engineer in Kazakhstan. I can develop responsive websites from scratch and raise them into modern user-friendly web experiences.",
+    "me2": "I always strive to learn about the newest technologies and frameworks."
+  },
+  "contact": {
+    "contact": "Message me here",
+    "text": "I'm interested in opportunities to grow in the backend. However, if you have another request or question, feel free to contact me."
+  },
+  "footer": {
+    "text": "Software developer based in Kazakhstan",
+    "media": "Media"
   }
 }

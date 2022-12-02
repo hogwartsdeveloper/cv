@@ -2,14 +2,10 @@
   <app-section-title [sectionTitle]="'toolbar.about-me'"></app-section-title>
   <div class="flex justify-between">
     <div class="flex-1 info space-y-5 text-gray-400">
-      <p class="mt-16">Hello, i’m Zhannur!</p>
+      <p class="mt-16">{{ "about-me.hello" | translate }}</p>
+      <p>{{ "about-me.me" | translate }}</p>
       <p>
-        I'm a software engineer in Astana, Kazakhstan. I can develop responsive
-        websites from scratch and raise them into modern user-friendly web
-        experiences.
-      </p>
-      <p>
-        I always strive to learn about the newest technologies and frameworks.
+        {{ "about-me.me2" | translate }}
       </p>
     </div>
     <div class="flex-1 img relative">

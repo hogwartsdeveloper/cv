@@ -1,15 +1,14 @@
 <div class="mt-24">
   <app-section-title [sectionTitle]="'toolbar.contacts'"></app-section-title>
   <div class="flex text-gray-400 mt-10">
-    <p class="flex-1">
-      I'm interested in opportunities to grow in the backend. However, if you
-      have another request or question, feel free to contact me.
-    </p>
+    <p class="flex-1">{{ "contact.text" | translate }}</p>
     <div class="flex-1">
       <div
         class="flex flex-col w-1/2 w-max ml-auto ring-1 ring-inset ring-gray-400 p-4 space-y-4"
       >
-        <div class="text-white font-semibold">Message me here</div>
+        <div class="text-white font-semibold">
+          {{ "contact.contact" | translate }}
+        </div>
         <div class="flex items-center">
           <span class="icon icon-linkedin"></span>
           <p>zhannur-akhmetkhanov</p>

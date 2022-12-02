@@ -7,7 +7,7 @@ import { ISkill } from '../models/skill.model';
   styleUrls: ['./skill-item.component.scss'],
 })
 export class SkillItemComponent implements OnInit {
-  @Input() skill: ISkill | undefined;
+  @Input() skill: ISkill;
 
   constructor() {}
 

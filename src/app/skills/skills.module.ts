@@ -6,6 +6,7 @@ import { LogoComponent } from '../ui/logo/logo.component';
 import { DotsComponent } from '../ui/dots/dots.component';
 import { SquareComponent } from '../ui/square/square.component';
 import { SkillItemComponent } from './skill-item/skill-item.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [SkillsComponent, SkillItemComponent],
@@ -15,6 +16,7 @@ import { SkillItemComponent } from './skill-item/skill-item.component';
     LogoComponent,
     DotsComponent,
     SquareComponent,
+    TranslateModule,
   ],
   exports: [SkillsComponent],
 })

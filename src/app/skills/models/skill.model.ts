@@ -4,26 +4,26 @@ export interface ISkill {
 }
 
 export const language: ISkill = {
-  title: 'Language',
+  title: 'skill.language',
   skills: ['JavaScript', 'TypeScript'],
 };
 
 export const db: ISkill = {
-  title: 'Databases',
+  title: 'skill.database',
   skills: ['PostgreSQL', 'Mongo'],
 };
 
 export const frameworks: ISkill = {
-  title: 'Frameworks',
+  title: 'skill.framework',
   skills: ['Angular', 'React'],
 };
 
 export const other: ISkill = {
-  title: 'Other',
+  title: 'skill.other',
   skills: ['HTML', 'CSS', 'SCSS', 'SQL', 'Bash'],
 };
 
 export const tools: ISkill = {
-  title: 'Tools',
+  title: 'skill.tool',
   skills: ['WebStorm', 'Git', 'Linux', 'Figma'],
 };

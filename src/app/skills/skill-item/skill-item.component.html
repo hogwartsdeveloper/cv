@@ -1,5 +1,5 @@
 <div class="block ring-1 ring-inset ring-gray-400">
-  <div class="p-2">{{ skill?.title }}</div>
+  <div class="p-2 whitespace-nowrap">{{ skill.title | translate }}</div>
   <div class="flex flex-wrap border-t border-gray-400 p-2">
     <span class="text-gray-400 mr-4" *ngFor="let skill of skill?.skills">{{
       skill
