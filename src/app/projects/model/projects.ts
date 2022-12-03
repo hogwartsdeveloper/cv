@@ -2,7 +2,7 @@ import { IProject } from './project.model';
 
 export const projects: IProject[] = [
   {
-    img: '/assets/img/tic-tac-toe.png',
+    img: 'assets/img/tic-tac-toe.png',
     techs: ['HTML', 'SCSS', 'TypeScript', 'Angular'],
     title: 'project.tic-tac.title',
     description: 'project.tic-tac.description',
@@ -10,7 +10,7 @@ export const projects: IProject[] = [
     code: 'https://github.com/hogwartsdeveloper/x-o',
   },
   {
-    img: '/assets/img/cloud-hub.png',
+    img: 'assets/img/cloud-hub.png',
     techs: [
       'HTML',
       'CSS',
@@ -25,7 +25,7 @@ export const projects: IProject[] = [
     code: 'https://github.com/hogwartsdeveloper/cloud_hub_back',
   },
   {
-    img: '/assets/img/animal-pedia.jpeg',
+    img: 'assets/img/animal-pedia.jpeg',
     techs: ['TypeScript', 'ReactNative', 'FireStore'],
     title: 'project.animal.title',
     description: 'project.animal.description',
