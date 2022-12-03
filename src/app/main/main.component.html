@@ -6,7 +6,10 @@
       }}</span>
     </h1>
     <p class="text-slate-400 mb-10">{{ "main.description" | translate }}</p>
-    <app-btn [btnText]="'main.contactBtn'"></app-btn>
+    <app-btn
+      [btnText]="'main.contactBtn'"
+      (click)="onClick('#contacts')"
+    ></app-btn>
   </div>
 
   <div class="relative">
@@ -35,5 +38,3 @@
     <span class="quote text-gray-400 absolute right-3 -bottom-2">&ldquo;</span>
   </div>
 </div>
-
-<app-square class="hidden lg:block absolute -right-32"></app-square>

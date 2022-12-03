@@ -1,5 +1,5 @@
 <div class="flex flex-col ring-1 ring-inset ring-gray-400">
-  <img [src]="project?.img" [alt]="project?.title + 'img'" />
+  <img [src]="project.img" [alt]="project.title + 'img'" />
   <div class="techs p-3 border-t border-gray-400 space-x-3">
     <span class="text-gray-400" *ngFor="let i of project?.techs">{{ i }}</span>
   </div>
@@ -10,11 +10,12 @@
       <app-btn
         *ngIf="project?.live"
         [btnText]="'project.btn.live' | translate"
-        (click)="followingLink(project?.live)"
+        (click)="followingLink(project.live)"
       ></app-btn>
       <app-btn
         [btnText]="'project.btn.code' | translate"
-        (click)="followingLink(project?.code)"
+        [isGray]="true"
+        (click)="followingLink(project.code)"
       ></app-btn>
     </div>
   </div>

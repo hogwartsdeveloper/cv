@@ -24,4 +24,8 @@ export class MainComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  onClick(link: string) {
+    window.open(link, '_self');
+  }
 }

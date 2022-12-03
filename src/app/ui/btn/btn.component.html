@@ -1,7 +1,11 @@
 <button
   (click)="onClick()"
   type="button"
-  class="hidden hover:bg-fuchsia-500 sm:block px-4 py-2 ring-1 ring-inset ring-fuchsia-400"
+  class="hidden sm:block px-4 py-2 ring-1 ring-inset"
+  [ngClass]="{
+    'hover:bg-fuchsia-500 ring-fuchsia-400': !isGray,
+    'hover:bg-gray-400 ring-gray-400': isGray
+  }"
 >
   {{ btnText | translate }}
 </button>
