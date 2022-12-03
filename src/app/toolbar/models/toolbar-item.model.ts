@@ -21,3 +21,10 @@ export const menuItems: IMenuLink[] = [
     link: 'contacts',
   },
 ];
+
+export enum MenuNavigateEnum {
+  HOME = 1,
+  WORK,
+  ABOUT,
+  CONTACT,
+}
