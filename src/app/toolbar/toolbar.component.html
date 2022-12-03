@@ -17,16 +17,14 @@
     ></span>
   </button>
   <div class="hidden sm:flex space-x-4">
-    <a
-      #links
-      class="px-3 py-2 rounded-md text-sm font-medium hover:bg-fuchsia-500"
+    <span
+      class="px-3 py-2 rounded-md text-sm font-medium hover:bg-fuchsia-500 cursor-pointer"
       *ngFor="let item of menuItems; let index = index"
       [ngClass]="{
         'bg-fuchsia-500': index + 1 === activeNav
       }"
-      [href]="'#' + item.link"
-      (click)="click(links)"
-      >{{ "#" + (item.name | translate) }}</a
+      (click)="click(item.id)"
+      >{{ "#" + (item.name | translate) }}</span
     >
     <app-language-select></app-language-select>
   </div>
@@ -34,15 +32,14 @@
 
 <div class="hidden" #mobileMenu>
   <div class="space-y-1 px-2 pt-2 pb-3">
-    <a
+    <span
       *ngFor="let item of menuItems; let index = index"
       [ngClass]="{
         'bg-fuchsia-500': index + 1 === activeNav,
         'hover:bg-fuchsia-500': index !== 0
       }"
-      [href]="item.link"
-      class="block px-3 py-2 rounded-md text-base font-medium"
-      >{{ "#" + (item.name | translate) }}</a
+      class="block px-3 py-2 rounded-md text-base font-medium cursor-pointer"
+      >{{ "#" + (item.name | translate) }}</span
     >
   </div>
 </div>

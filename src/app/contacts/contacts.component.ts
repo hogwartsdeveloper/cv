@@ -1,4 +1,5 @@
 import {
+  AfterViewInit,
   Component,
   ElementRef,
   OnDestroy,
@@ -19,19 +20,44 @@ import { MenuNavigateEnum } from '../toolbar/models/toolbar-item.model';
   templateUrl: './contacts.component.html',
   styleUrls: ['./contacts.component.scss'],
 })
-export class ContactsComponent implements OnInit, OnDestroy {
+export class ContactsComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('mainBlock') mainBlock: ElementRef;
   destroy$ = new Subject();
-  constructor(private navigateService: NavigationService) {}
+  constructor(private navigationService: NavigationService) {}
 
   ngOnInit(): void {
-    this.navigateService.scroll$
+    this.isElementInViewPort();
+  }
+
+  ngAfterViewInit() {
+    this.isElementScrollIntoView();
+  }
+
+  isElementInViewPort() {
+    this.navigationService.scroll$
       .pipe(debounceTime(300), takeUntil(this.destroy$))
       .subscribe(() => {
         if (
-          this.navigateService.isElementInViewPort(this.mainBlock.nativeElement)
+          this.navigationService.isElementInViewPort(
+            this.mainBlock.nativeElement
+          )
         ) {
-          this.navigateService.navigate$.next(MenuNavigateEnum.CONTACT);
+          this.navigationService.navigate$.next(MenuNavigateEnum.CONTACT);
+        }
+      });
+  }
+
+  isElementScrollIntoView() {
+    this.navigationService.navigate$
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((navigate) => {
+        if (
+          navigate === MenuNavigateEnum.CONTACT &&
+          !this.navigationService.isElementInViewPort(
+            this.mainBlock?.nativeElement
+          )
+        ) {
+          this.mainBlock.nativeElement.scrollIntoView({ behavior: 'smooth' });
         }
       });
   }

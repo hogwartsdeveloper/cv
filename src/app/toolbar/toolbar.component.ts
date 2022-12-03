@@ -1,11 +1,4 @@
-import {
-  Component,
-  ElementRef,
-  OnDestroy,
-  OnInit,
-  QueryList,
-  ViewChildren,
-} from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import {
   IMenuLink,
   menuItems,
@@ -27,8 +20,6 @@ export class ToolbarComponent implements OnInit, OnDestroy {
   activeNav: MenuNavigateEnum;
   destroy$ = new Subject();
 
-  @ViewChildren('links') links: QueryList<ElementRef>;
-
   constructor(private navigationService: NavigationService) {}
 
   ngOnInit(): void {
@@ -46,14 +37,8 @@ export class ToolbarComponent implements OnInit, OnDestroy {
     }
   }
 
-  click(link: HTMLAnchorElement) {
-    this.links.forEach((l) => {
-      if (link === l.nativeElement) {
-        l.nativeElement.classList.add('bg-fuchsia-500');
-      } else {
-        l.nativeElement.classList.remove('bg-fuchsia-500');
-      }
-    });
+  click(id: MenuNavigateEnum) {
+    this.navigationService.navigate$.next(id);
   }
 
   ngOnDestroy() {

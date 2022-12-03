@@ -36,6 +36,14 @@ export class MainComponent implements OnInit, AfterViewInit, OnDestroy {
   constructor(private navigationService: NavigationService) {}
 
   ngOnInit(): void {
+    this.isElementInViewPort();
+  }
+
+  ngAfterViewInit() {
+    this.isElementScrollIntoView();
+  }
+
+  isElementInViewPort() {
     this.navigationService.scroll$
       .pipe(debounceTime(300), takeUntil(this.destroy$))
       .subscribe(() => {
@@ -49,7 +57,20 @@ export class MainComponent implements OnInit, AfterViewInit, OnDestroy {
       });
   }
 
-  ngAfterViewInit() {}
+  isElementScrollIntoView() {
+    this.navigationService.navigate$
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((navigate) => {
+        if (
+          navigate === MenuNavigateEnum.HOME &&
+          !this.navigationService.isElementInViewPort(
+            this.mainBlock?.nativeElement
+          )
+        ) {
+          this.mainBlock.nativeElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+  }
 
   onClick(link: string) {
     window.open(link, '_self');

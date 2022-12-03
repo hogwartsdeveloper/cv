@@ -1,30 +1,30 @@
-export interface IMenuLink {
-  name: string;
-  link: string;
-}
-
-export const menuItems: IMenuLink[] = [
-  {
-    name: 'toolbar.home',
-    link: 'home',
-  },
-  {
-    name: 'toolbar.works',
-    link: 'works',
-  },
-  {
-    name: 'toolbar.about-me',
-    link: 'about-me',
-  },
-  {
-    name: 'toolbar.contacts',
-    link: 'contacts',
-  },
-];
-
 export enum MenuNavigateEnum {
   HOME = 1,
   WORK,
   ABOUT,
   CONTACT,
 }
+
+export interface IMenuLink {
+  name: string;
+  id: MenuNavigateEnum;
+}
+
+export const menuItems: IMenuLink[] = [
+  {
+    name: 'toolbar.home',
+    id: MenuNavigateEnum.HOME,
+  },
+  {
+    name: 'toolbar.works',
+    id: MenuNavigateEnum.WORK,
+  },
+  {
+    name: 'toolbar.about-me',
+    id: MenuNavigateEnum.ABOUT,
+  },
+  {
+    name: 'toolbar.contacts',
+    id: MenuNavigateEnum.CONTACT,
+  },
+];
