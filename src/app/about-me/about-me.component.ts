@@ -10,7 +10,7 @@ import { SectionTitleComponent } from '../ui/section-title/section-title.compone
 import { DotsComponent } from '../ui/dots/dots.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { NavigationService } from '../services/navigation.service';
-import { debounceTime, Subject, takeUntil } from 'rxjs';
+import { debounceTime, distinctUntilChanged, Subject, takeUntil } from 'rxjs';
 import { MenuNavigateEnum } from '../toolbar/models/toolbar-item.model';
 
 @Component({
@@ -48,7 +48,7 @@ export class AboutMeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   isElementScrollIntoView() {
     this.navigationService.navigate$
-      .pipe(takeUntil(this.destroy$))
+      .pipe(debounceTime(300), distinctUntilChanged(), takeUntil(this.destroy$))
       .subscribe((navigate) => {
         if (
           navigate === MenuNavigateEnum.ABOUT &&
@@ -56,10 +56,10 @@ export class AboutMeComponent implements OnInit, AfterViewInit, OnDestroy {
             this.mainBlock?.nativeElement
           )
         ) {
-          window.scrollTo({
-            top: this.mainBlock.nativeElement.getBoundingClientRect().top - 64,
-            behavior: 'smooth',
-          });
+          const top =
+            this.mainBlock.nativeElement.getBoundingClientRect().top +
+            window.scrollY;
+          window.scroll({ top: top - 64, behavior: 'smooth' });
         }
       });
   }

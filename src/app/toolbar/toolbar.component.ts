@@ -6,7 +6,7 @@ import {
 } from './models/toolbar-item.model';
 import { IMedia, medias } from '../models/media.model';
 import { NavigationService } from '../services/navigation.service';
-import { Subject, takeUntil } from 'rxjs';
+import { debounceTime, distinctUntilChanged, Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-toolbar',
@@ -24,8 +24,10 @@ export class ToolbarComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.navigationService.navigate$
-      .pipe(takeUntil(this.destroy$))
-      .subscribe((navigate) => (this.activeNav = navigate));
+      .pipe(debounceTime(300), distinctUntilChanged(), takeUntil(this.destroy$))
+      .subscribe((navigate) => {
+        this.activeNav = navigate;
+      });
   }
 
   openMobileMenu(menu: HTMLDivElement) {

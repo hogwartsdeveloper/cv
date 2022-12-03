@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
 import { SectionTitleComponent } from '../ui/section-title/section-title.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { NavigationService } from '../services/navigation.service';
-import { debounceTime, Subject, takeUntil } from 'rxjs';
+import { debounceTime, distinctUntilChanged, Subject, takeUntil } from 'rxjs';
 import { MenuNavigateEnum } from '../toolbar/models/toolbar-item.model';
 
 @Component({
@@ -49,7 +49,7 @@ export class ContactsComponent implements OnInit, AfterViewInit, OnDestroy {
 
   isElementScrollIntoView() {
     this.navigationService.navigate$
-      .pipe(takeUntil(this.destroy$))
+      .pipe(debounceTime(300), distinctUntilChanged(), takeUntil(this.destroy$))
       .subscribe((navigate) => {
         if (
           navigate === MenuNavigateEnum.CONTACT &&

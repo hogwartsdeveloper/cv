@@ -13,7 +13,7 @@ import { LogoComponent } from '../ui/logo/logo.component';
 import { DotsComponent } from '../ui/dots/dots.component';
 import { SquareComponent } from '../ui/square/square.component';
 import { NavigationService } from '../services/navigation.service';
-import { debounceTime, Subject, takeUntil } from 'rxjs';
+import { debounceTime, distinctUntilChanged, Subject, takeUntil } from 'rxjs';
 import { MenuNavigateEnum } from '../toolbar/models/toolbar-item.model';
 
 @Component({
@@ -59,7 +59,7 @@ export class MainComponent implements OnInit, AfterViewInit, OnDestroy {
 
   isElementScrollIntoView() {
     this.navigationService.navigate$
-      .pipe(takeUntil(this.destroy$))
+      .pipe(debounceTime(300), distinctUntilChanged(), takeUntil(this.destroy$))
       .subscribe((navigate) => {
         if (
           navigate === MenuNavigateEnum.HOME &&
