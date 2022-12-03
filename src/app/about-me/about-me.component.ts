@@ -56,7 +56,10 @@ export class AboutMeComponent implements OnInit, AfterViewInit, OnDestroy {
             this.mainBlock?.nativeElement
           )
         ) {
-          this.mainBlock.nativeElement.scrollIntoView({ behavior: 'smooth' });
+          window.scrollTo({
+            top: this.mainBlock.nativeElement.getBoundingClientRect().top - 64,
+            behavior: 'smooth',
+          });
         }
       });
   }

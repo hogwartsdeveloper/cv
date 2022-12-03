@@ -67,7 +67,10 @@ export class MainComponent implements OnInit, AfterViewInit, OnDestroy {
             this.mainBlock?.nativeElement
           )
         ) {
-          this.mainBlock.nativeElement.scrollIntoView({ behavior: 'smooth' });
+          window.scrollTo({
+            top: this.mainBlock.nativeElement.getBoundingClientRect().top,
+            behavior: 'smooth',
+          });
         }
       });
   }
