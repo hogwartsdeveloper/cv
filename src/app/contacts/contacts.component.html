@@ -9,16 +9,19 @@
         <div class="text-white font-semibold">
           {{ "contact.contact" | translate }}
         </div>
-        <div class="flex items-center">
-          <span class="icon icon-linkedin"></span>
+        <div class="hover:bg-fuchsia-500 contact-item" (click)="getLinkedin()">
+          <span class="icon icon-linkedin text-white"></span>
           <p>zhannur-akhmetkhanov</p>
         </div>
 
-        <div class="flex items-center">
-          <span class="icon icon-email"></span>
+        <a
+          class="hover:bg-fuchsia-500 contact-item"
+          href="mailto: jannuraidynuly@gmail.com"
+        >
+          <span class="icon icon-email text-white"></span>
 
           <p>jannuraidynuly@gmail.com</p>
-        </div>
+        </a>
       </div>
     </div>
   </div>

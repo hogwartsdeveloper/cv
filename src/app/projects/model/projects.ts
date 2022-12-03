@@ -22,7 +22,6 @@ export const projects: IProject[] = [
     ],
     title: 'project.cloud-hub.title',
     description: 'project.cloud-hub.description',
-    live: 'https://shrouded-journey-45248.herokuapp.com/',
     code: 'https://github.com/hogwartsdeveloper/cloud_hub_back',
   },
   {

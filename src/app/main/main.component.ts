@@ -32,7 +32,9 @@ import { MenuNavigateEnum } from '../toolbar/models/toolbar-item.model';
 })
 export class MainComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('mainBlock') mainBlock: ElementRef;
+  navigateType = MenuNavigateEnum;
   destroy$ = new Subject();
+
   constructor(private navigationService: NavigationService) {}
 
   ngOnInit(): void {
@@ -75,8 +77,8 @@ export class MainComponent implements OnInit, AfterViewInit, OnDestroy {
       });
   }
 
-  onClick(link: string) {
-    window.open(link, '_self');
+  onClick(navItem: MenuNavigateEnum) {
+    this.navigationService.navigate$.next(navItem);
   }
 
   ngOnDestroy() {

@@ -11,7 +11,7 @@
     <p class="text-slate-400 mb-10">{{ "main.description" | translate }}</p>
     <app-btn
       [btnText]="'main.contactBtn'"
-      (click)="onClick('#contacts')"
+      (click)="onClick(navigateType.CONTACT)"
     ></app-btn>
   </div>
 

@@ -12,6 +12,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { NavigationService } from '../services/navigation.service';
 import { debounceTime, distinctUntilChanged, Subject, takeUntil } from 'rxjs';
 import { MenuNavigateEnum } from '../toolbar/models/toolbar-item.model';
+import { medias } from '../models/media.model';
 
 @Component({
   selector: 'app-contacts',
@@ -60,6 +61,10 @@ export class ContactsComponent implements OnInit, AfterViewInit, OnDestroy {
           this.mainBlock.nativeElement.scrollIntoView({ behavior: 'smooth' });
         }
       });
+  }
+
+  getLinkedin() {
+    window.open(medias[1].link, '_blank');
   }
 
   ngOnDestroy() {
