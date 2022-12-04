@@ -30,16 +30,15 @@
   </div>
 </div>
 
-<div class="hidden" #mobileMenu>
+<div class="hidden mobileMenu" #mobileMenu>
   <div class="space-y-1 px-2 pt-2 pb-3">
     <span
       *ngFor="let item of menuItems; let index = index"
       [ngClass]="{
-        'bg-fuchsia-500': index + 1 === activeNav,
-        'hover:bg-fuchsia-500': index !== 0
+        'bg-fuchsia-500': index + 1 === activeNav
       }"
       (click)="clickMobile(item.id, mobileMenu)"
-      class="block px-3 py-2 rounded-md text-base font-medium cursor-pointer"
+      class="block px-3 py-2 rounded-md text-base font-medium cursor-pointer hover:bg-fuchsia-500"
       >{{ "#" + (item.name | translate) }}</span
     >
   </div>

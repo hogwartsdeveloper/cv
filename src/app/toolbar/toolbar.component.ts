@@ -44,6 +44,9 @@ export class ToolbarComponent implements OnInit, OnDestroy {
   }
 
   clickMobile(id: MenuNavigateEnum, block: HTMLDivElement) {
+    if (id === MenuNavigateEnum.HOME) {
+      window.scroll({ top: 0, behavior: 'smooth' });
+    }
     this.click(id);
     this.openMobileMenu(block);
   }
