@@ -10,6 +10,7 @@
     </h1>
     <p class="text-slate-400 mb-10">{{ "main.description" | translate }}</p>
     <app-btn
+      class="hidden sm:block"
       [btnText]="'main.contactBtn'"
       (click)="onClick(navigateType.CONTACT)"
     ></app-btn>
