@@ -1,21 +1,24 @@
 <div class="toolbar flex justify-between h-16 items-center">
   <div>Zhannur</div>
-  <button
-    type="button"
-    class="sm:hidden inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-fuchsia-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-    (click)="openMobileMenu(mobileMenu)"
-  >
-    <span class="sr-only">Open main menu</span>
-    <span
-      [ngClass]="{ block: !openMenu, hidden: openMenu }"
-      class="icon icon-menu"
-    ></span>
+  <div class="sm:hidden flex items-center">
+    <app-language-select></app-language-select>
+    <button
+      type="button"
+      class="ml-3 inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-fuchsia-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+      (click)="openMobileMenu(mobileMenu)"
+    >
+      <span class="sr-only">Open main menu</span>
+      <span
+        [ngClass]="{ block: !openMenu, hidden: openMenu }"
+        class="icon icon-menu"
+      ></span>
 
-    <span
-      [ngClass]="{ block: openMenu, hidden: !openMenu }"
-      class="icon icon-menu-close"
-    ></span>
-  </button>
+      <span
+        [ngClass]="{ block: openMenu, hidden: !openMenu }"
+        class="icon icon-menu-close"
+      ></span>
+    </button>
+  </div>
   <div class="hidden sm:flex space-x-4">
     <span
       class="px-3 py-2 rounded-md text-sm font-medium hover:bg-fuchsia-500 cursor-pointer"
