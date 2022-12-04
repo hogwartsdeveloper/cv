@@ -1,8 +1,18 @@
-<div class="flex flex-col ring-1 ring-inset ring-gray-400">
-  <img [src]="project.img" [alt]="project.title + 'img'" />
-  <div class="techs p-3 border-t border-gray-400 space-x-3">
+<div class="group relative ring-1 ring-inset ring-gray-400 p-0.5">
+  <div
+    class="min-h-80 aspect-w-1 w-full overflow-hidden bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80"
+  >
+    <img
+      [src]="project.img"
+      [alt]="project.title + 'img'"
+      class="h-full w-full object-cover object-center lg:h-full lg:w-full"
+    />
+  </div>
+
+  <div class="flex flex-wrap p-2 border-t border-gray-400 gap-x-3">
     <span class="text-gray-400" *ngFor="let i of project?.techs">{{ i }}</span>
   </div>
+
   <div class="title px-5 pt-6 pb-3 border-t border-gray-400">
     <h4 class="text-2xl font-medium">{{ project.title | translate }}</h4>
     <p class="text-gray-400 mt-3.5">{{ project.description | translate }}</p>
