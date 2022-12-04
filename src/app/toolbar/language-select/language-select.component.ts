@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ILanguage, LanguageType } from '../../models/language.model';
 import { TranslateService } from '@ngx-translate/core';
+import { LoaderService } from '../../services/loader.service';
 
 @Component({
   selector: 'app-language-select',
@@ -14,7 +15,10 @@ export class LanguageSelectComponent implements OnInit {
     { value: LanguageType.Kz, name: 'kz' },
     { value: LanguageType.Ru, name: 'ru' },
   ];
-  constructor(private translateService: TranslateService) {}
+  constructor(
+    private translateService: TranslateService,
+    private loadingService: LoaderService
+  ) {}
 
   ngOnInit(): void {
     const currentLang =
@@ -40,6 +44,7 @@ export class LanguageSelectComponent implements OnInit {
   onSelectLang(lang: ILanguage) {
     this.selectedLanguage = lang;
     this.translateService.use(lang.name);
+    this.loadingService.loading$.next(null);
   }
 
   closeLangMenu(menu: HTMLUListElement) {

@@ -1,18 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { NavigationService } from './services/navigation.service';
+import { LoaderService } from './services/loader.service';
+import { Subject, takeUntil, tap } from 'rxjs';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
   title = 'interactive-cv';
-  loading: boolean = true;
+  loading: boolean = false;
+  destroy$ = new Subject();
   constructor(
     private translateService: TranslateService,
-    private navigationService: NavigationService
+    private navigationService: NavigationService,
+    private loadingService: LoaderService
   ) {
     this.translateService.setDefaultLang('ru');
   }
@@ -20,12 +24,13 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.getBrowserLanguage();
     this.getWindowScroll();
-
-    setTimeout(() => {
-      this.loading = false;
-    }, 2500);
+    this.loadingService.loading$
+      .pipe(
+        tap(() => (this.loading = true)),
+        takeUntil(this.destroy$)
+      )
+      .subscribe(() => this.showLoading());
   }
-
   getBrowserLanguage() {
     const language = navigator.language;
 
@@ -46,5 +51,16 @@ export class AppComponent implements OnInit {
     window.addEventListener('scroll', () =>
       this.navigationService.scroll$.next(true)
     );
+  }
+
+  showLoading() {
+    setTimeout(() => {
+      this.loading = false;
+    }, 2500);
+  }
+
+  ngOnDestroy() {
+    this.destroy$.next(null);
+    this.destroy$.complete();
   }
 }
