@@ -11,7 +11,7 @@ import { Subject, takeUntil, tap } from 'rxjs';
 })
 export class AppComponent implements OnInit, OnDestroy {
   title = 'interactive-cv';
-  loading: boolean = false;
+  loading: boolean = true;
   destroy$ = new Subject();
   constructor(
     private translateService: TranslateService,
@@ -24,6 +24,7 @@ export class AppComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.getBrowserLanguage();
     this.getWindowScroll();
+    this.showLoading();
     this.loadingService.loading$
       .pipe(
         tap(() => (this.loading = true)),
