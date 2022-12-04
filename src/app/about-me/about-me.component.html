@@ -1,14 +1,14 @@
-<div #mainBlock class="relative mt-24">
+<div #mainBlock class="relative mt-14 sm:mt-24">
   <app-section-title [sectionTitle]="'toolbar.about-me'"></app-section-title>
   <div class="flex justify-between">
     <div class="flex-1 info space-y-5 text-gray-400">
-      <p class="mt-16">{{ "about-me.hello" | translate }}</p>
+      <p class="mt-3 sm:mt-16">{{ "about-me.hello" | translate }}</p>
       <p>{{ "about-me.me" | translate }}</p>
       <p>
         {{ "about-me.me2" | translate }}
       </p>
     </div>
-    <div class="flex-1 img relative">
+    <div class="hidden sm:block flex-1 img relative">
       <img class="ml-auto" src="assets/img/me-2.png" alt="me" />
       <div class="bg-fuchsia-400 h-0.5 w-1/2 ml-auto"></div>
       <app-dots class="absolute bottom-28 right-0 w-1/6"></app-dots>
