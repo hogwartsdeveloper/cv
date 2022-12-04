@@ -43,6 +43,11 @@ export class ToolbarComponent implements OnInit, OnDestroy {
     this.navigationService.navigate$.next(id);
   }
 
+  clickMobile(id: MenuNavigateEnum, block: HTMLDivElement) {
+    this.click(id);
+    this.openMobileMenu(block);
+  }
+
   ngOnDestroy() {
     this.destroy$.next(null);
     this.destroy$.complete();

@@ -38,6 +38,7 @@
         'bg-fuchsia-500': index + 1 === activeNav,
         'hover:bg-fuchsia-500': index !== 0
       }"
+      (click)="clickMobile(item.id, mobileMenu)"
       class="block px-3 py-2 rounded-md text-base font-medium cursor-pointer"
       >{{ "#" + (item.name | translate) }}</span
     >
