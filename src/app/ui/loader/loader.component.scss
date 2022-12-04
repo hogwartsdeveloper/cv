@@ -1,0 +1,46 @@
+.loader {
+  height: 100%;
+}
+
+.cup {
+  width: 180px;
+  height: 140px;
+  border: 6px solid #282c33;
+  border-radius: 0 0 70px 70px;
+  box-shadow: 0 0 0 6px #e979fa;
+  background: url("img/coffee.png") repeat-x 0 140px;
+  animation: fill 5s infinite;
+}
+
+.handle {
+  height: 70px;
+  width: 40px;
+  background-color: transparent;
+  border: 6px solid #e979fa;
+  position: relative;
+  left: 174px;
+  top: 2px;
+  border-radius: 0 25px 80px 0;
+}
+
+@keyframes fill {
+  0% {
+    background-position: 0 140px;
+  }
+
+  20% {
+    background-position: -450px 100px;
+  }
+
+  40% {
+    background-position: -900px 50px;
+  }
+
+  80% {
+    background-position: -1350px -40px;
+  }
+
+  100% {
+    background-position: 0 140px;
+  }
+}

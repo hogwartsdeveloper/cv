@@ -13,6 +13,7 @@ import { SkillsModule } from './skills/skills.module';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { FooterComponent } from './footer/footer.component';
+import { LoaderComponent } from './ui/loader/loader.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -34,6 +35,7 @@ import { FooterComponent } from './footer/footer.component';
     AboutMeComponent,
     ContactsComponent,
     FooterComponent,
+    LoaderComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,14 +1,22 @@
-<div class="mx-auto max-w-6xl px-2 sm:px-6 lg:px-8">
-  <app-toolbar></app-toolbar>
-  <app-main></app-main>
-  <app-projects></app-projects>
-  <app-skills></app-skills>
-  <app-about-me></app-about-me>
-  <app-contacts></app-contacts>
-</div>
+<ng-container *ngIf="!loading; else loader">
+  <div class="mx-auto max-w-6xl px-2 sm:px-6 lg:px-8">
+    <ng-container>
+      <app-toolbar></app-toolbar>
+      <app-main></app-main>
+      <app-projects></app-projects>
+      <app-skills></app-skills>
+      <app-about-me></app-about-me>
+      <app-contacts></app-contacts>
+    </ng-container>
+  </div>
 
-<div class="mt-14 sm:mt-24 bg-gray-400 w-full line"></div>
+  <div class="mt-14 sm:mt-24 bg-gray-400 w-full line"></div>
 
-<div class="mx-auto max-w-6xl px-2 sm:px-6 lg:px-8">
-  <app-footer></app-footer>
-</div>
+  <div class="mx-auto max-w-6xl px-2 sm:px-6 lg:px-8">
+    <app-footer></app-footer>
+  </div>
+</ng-container>
+
+<ng-template #loader>
+  <app-loader></app-loader>
+</ng-template>

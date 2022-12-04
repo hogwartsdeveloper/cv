@@ -9,7 +9,7 @@ import { NavigationService } from './services/navigation.service';
 })
 export class AppComponent implements OnInit {
   title = 'interactive-cv';
-
+  loading: boolean = true;
   constructor(
     private translateService: TranslateService,
     private navigationService: NavigationService
@@ -20,6 +20,10 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.getBrowserLanguage();
     this.getWindowScroll();
+
+    setTimeout(() => {
+      this.loading = false;
+    }, 2500);
   }
 
   getBrowserLanguage() {
