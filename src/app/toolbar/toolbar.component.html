@@ -18,7 +18,7 @@
     ></span>
   </button>
 
-  <div class="hidden sm:flex space-x-4">
+  <div class="hidden sm:flex items-center space-x-4">
     <span
       class="px-3 py-2 rounded-md text-sm font-medium hover:bg-fuchsia-500 cursor-pointer"
       *ngFor="let item of menuItems; let index = index"
@@ -28,6 +28,12 @@
       (click)="click(item.id)"
       >{{ "#" + (item.name | translate) }}</span
     >
+    <button mat-icon-button (click)="changeDarkMode()">
+      <mat-icon *ngIf="!isDarkMode" class="text-amber-200">wb_sunny</mat-icon>
+      <mat-icon *ngIf="isDarkMode" class="rotate-180 text-sky-400"
+        >brightness_3</mat-icon
+      >
+    </button>
     <app-language-select></app-language-select>
   </div>
 </div>

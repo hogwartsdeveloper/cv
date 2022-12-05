@@ -14,6 +14,7 @@ import { debounceTime, distinctUntilChanged, Subject, takeUntil } from 'rxjs';
   styleUrls: ['./toolbar.component.scss'],
 })
 export class ToolbarComponent implements OnInit, OnDestroy {
+  isDarkMode: boolean = true;
   menuItems: IMenuLink[] = menuItems;
   openMenu: boolean = false;
   medias: IMedia[] = medias;
@@ -49,6 +50,10 @@ export class ToolbarComponent implements OnInit, OnDestroy {
     }
     this.click(id);
     this.openMobileMenu(block);
+  }
+
+  changeDarkMode() {
+    this.isDarkMode = !this.isDarkMode;
   }
 
   ngOnDestroy() {
