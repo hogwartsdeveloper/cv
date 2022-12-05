@@ -1,4 +1,6 @@
-<div class="toolbar flex justify-between h-16 items-center">
+<div
+  class="toolbar bg-slate-50 dark:bg-[#282c33] flex justify-between h-16 items-center"
+>
   <div>Zhannur</div>
 
   <button
@@ -28,13 +30,13 @@
       (click)="click(item.id)"
       >{{ "#" + (item.name | translate) }}</span
     >
+    <app-language-select></app-language-select>
     <button mat-icon-button (click)="changeDarkMode()">
       <mat-icon *ngIf="!isDarkMode" class="text-amber-200">wb_sunny</mat-icon>
       <mat-icon *ngIf="isDarkMode" class="rotate-180 text-sky-400"
         >brightness_3</mat-icon
       >
     </button>
-    <app-language-select></app-language-select>
   </div>
 </div>
 

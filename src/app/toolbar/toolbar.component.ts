@@ -24,6 +24,12 @@ export class ToolbarComponent implements OnInit, OnDestroy {
   constructor(private navigationService: NavigationService) {}
 
   ngOnInit(): void {
+    const dark = localStorage.getItem('dark');
+    if (!dark) {
+      this.isDarkMode = false;
+    }
+    this.addStyleDarkMode();
+
     this.navigationService.navigate$
       .pipe(debounceTime(300), distinctUntilChanged(), takeUntil(this.destroy$))
       .subscribe((navigate) => {
@@ -54,6 +60,17 @@ export class ToolbarComponent implements OnInit, OnDestroy {
 
   changeDarkMode() {
     this.isDarkMode = !this.isDarkMode;
+    this.addStyleDarkMode();
+  }
+
+  addStyleDarkMode() {
+    if (this.isDarkMode) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('dark', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.removeItem('dark');
+    }
   }
 
   ngOnDestroy() {
