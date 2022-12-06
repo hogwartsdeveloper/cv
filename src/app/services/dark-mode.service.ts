@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { ReplaySubject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DarkModeService {
-  onDarkMode$ = new ReplaySubject<boolean>(1);
+  onDarkMode$ = new BehaviorSubject<boolean>(true);
   constructor() {}
 }

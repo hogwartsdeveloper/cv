@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { NavigationService } from './services/navigation.service';
 import { LoaderService } from './services/loader.service';
-import { Subject, takeUntil, tap } from 'rxjs';
+import { skip, Subject, take, takeUntil, tap } from 'rxjs';
 import { DarkModeService } from './services/dark-mode.service';
 
 @Component({
@@ -25,6 +25,20 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    this.darkModeService.onDarkMode$.pipe(take(1)).subscribe((darkMode) => {
+      const darkLocal = localStorage.getItem('dark');
+      if (!darkLocal) {
+        this.isDarkMode = darkMode;
+      }
+      if (darkLocal === 'dark') {
+        this.isDarkMode = true;
+      }
+      if (darkLocal === 'white') {
+        this.isDarkMode = false;
+      }
+      this.darkModeService.onDarkMode$.next(this.isDarkMode);
+      this.addStyleDarkMode();
+    });
     this.getDarkMode();
     this.getBrowserLanguage();
     this.getWindowScroll();
@@ -39,18 +53,12 @@ export class AppComponent implements OnInit, OnDestroy {
 
   getDarkMode() {
     this.darkModeService.onDarkMode$
-      .pipe(takeUntil(this.destroy$))
+      .pipe(skip(1), takeUntil(this.destroy$))
       .subscribe((darkMode) => {
         this.isDarkMode = darkMode;
+
         this.addStyleDarkMode();
       });
-
-    const dark = localStorage.getItem('dark');
-    if (!dark || !window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      this.isDarkMode = false;
-    }
-    this.addStyleDarkMode();
-    this.darkModeService.onDarkMode$.next(this.isDarkMode);
   }
   getBrowserLanguage() {
     const language = navigator.language;
@@ -86,7 +94,7 @@ export class AppComponent implements OnInit, OnDestroy {
       localStorage.setItem('dark', 'dark');
     } else {
       document.documentElement.classList.remove('dark');
-      localStorage.removeItem('dark');
+      localStorage.setItem('dark', 'white');
     }
   }
 

@@ -18,18 +18,21 @@ line-height: 1;
 -moz-osx-font-smoothing: grayscale;
 }
 
-        .icon-email:before {
+        .icon-app:before {
     content: "\f101";
     }
-        .icon-github:before {
+        .icon-email:before {
     content: "\f102";
     }
-        .icon-linkedin:before {
+        .icon-github:before {
     content: "\f103";
     }
-        .icon-menu-close:before {
+        .icon-linkedin:before {
     content: "\f104";
     }
-        .icon-menu:before {
+        .icon-menu-close:before {
     content: "\f105";
+    }
+        .icon-menu:before {
+    content: "\f106";
     }
