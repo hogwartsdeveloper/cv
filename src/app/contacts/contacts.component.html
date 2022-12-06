@@ -1,18 +1,20 @@
 <div #mainBlock class="mt-14 sm:mt-24">
   <app-section-title [sectionTitle]="'toolbar.contacts'"></app-section-title>
   <div
-    class="flex flex-col sm:flex-row items-center sm:items-start gap-y-3 text-gray-400 mt-3 sm:mt-6"
+    class="flex flex-col sm:flex-row items-center sm:items-start gap-y-3 text-slate-600 dark:text-gray-400 mt-3 sm:mt-6"
   >
     <p class="flex-1">{{ "contact.text" | translate }}</p>
     <div class="flex-1">
       <div
         class="flex flex-col w-1/2 w-max ml-auto ring-1 ring-inset ring-gray-400 p-4 space-y-4"
       >
-        <div class="text-white font-semibold">
+        <div class="text-neutral-900 dark:text-white font-semibold">
           {{ "contact.contact" | translate }}
         </div>
         <div class="hover:bg-fuchsia-500 contact-item" (click)="getLinkedin()">
-          <span class="icon icon-linkedin text-white"></span>
+          <span
+            class="icon icon-linkedin text-neutral-900 dark:text-white"
+          ></span>
           <p>zhannur-akhmetkhanov</p>
         </div>
 
@@ -20,7 +22,7 @@
           class="hover:bg-fuchsia-500 contact-item"
           href="mailto: jannuraidynuly@gmail.com"
         >
-          <span class="icon icon-email text-white"></span>
+          <span class="icon icon-email text-neutral-900 dark:text-white"></span>
 
           <p>jannuraidynuly@gmail.com</p>
         </a>

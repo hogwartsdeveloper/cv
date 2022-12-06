@@ -40,7 +40,7 @@
   </div>
 </div>
 
-<div class="hidden mobileMenu" #mobileMenu>
+<div class="hidden mobileMenu bg-slate-50 dark:bg-[#282c33]" #mobileMenu>
   <div class="space-y-1 px-2 pt-2 pb-3">
     <span
       *ngFor="let item of menuItems; let index = index"
@@ -55,6 +55,12 @@
     <app-language-select class="flex"></app-language-select>
 
     <div class="flex justify-center mt-10">
+      <button mat-icon-button (click)="changeDarkMode()">
+        <mat-icon *ngIf="!isDarkMode" class="text-amber-200">wb_sunny</mat-icon>
+        <mat-icon *ngIf="isDarkMode" class="rotate-180 text-sky-400"
+          >brightness_3</mat-icon
+        >
+      </button>
       <a
         *ngFor="let media of medias"
         target="_blank"

@@ -8,7 +8,9 @@
         "main.position" | translate
       }}</span>
     </h1>
-    <p class="text-slate-400 mb-10">{{ "main.description" | translate }}</p>
+    <p class="text-slate-600 dark:text-slate-400 mb-10">
+      {{ "main.description" | translate }}
+    </p>
     <app-btn
       class="hidden sm:block"
       [btnText]="'main.contactBtn'"
@@ -23,9 +25,11 @@
     <img src="assets/img/me.png" alt="software engineer image" />
     <div class="flex items-center py-2 ring-1 ring-inset ring-white mx-5">
       <div class="mx-2 w-4 h-4 bg-fuchsia-400"></div>
-      <h3 class="text-gray-400">
+      <h3 class="text-slate-600 dark:text-gray-400">
         {{ "main.thisMoment" | translate }}
-        <span class="text-white">{{ "main.thisMomentPoint" | translate }}</span>
+        <span class="text-neutral-900 dark:text-white">{{
+          "main.thisMomentPoint" | translate
+        }}</span>
       </h3>
     </div>
   </div>
@@ -38,7 +42,13 @@
     <div class="author right-0 p-4 ring-2 ring-inset ring-gray-400">
       {{ "main.quoteAuthor" | translate }}
     </div>
-    <span class="quote text-gray-400 absolute left-3 top-0">&ldquo;</span>
-    <span class="quote text-gray-400 absolute right-3 -bottom-2">&ldquo;</span>
+    <span
+      class="bg-slate-50 dark:bg-[#282c33] quote text-gray-400 absolute left-3 top-0"
+      >&ldquo;</span
+    >
+    <span
+      class="bg-slate-50 dark:bg-[#282c33] quote text-gray-400 absolute right-3 -bottom-2"
+      >&ldquo;</span
+    >
   </div>
 </div>
