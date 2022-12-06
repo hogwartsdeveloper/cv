@@ -5,18 +5,17 @@
 .cup {
   width: 90px;
   height: 70px;
-  border: 6px solid;
   border-radius: 0 0 70px 70px;
-  box-shadow: 0 0 0 6px #e979fa;
+  box-shadow: 0 0 0 4px #e979fa;
   background: url("img/coffee.png") repeat-x 0 140px;
-  animation: fill 7s infinite;
+  animation: fill 5s infinite;
 }
 
 .handle {
   height: 35px;
   width: 20px;
   background-color: transparent;
-  border: 6px solid #e979fa;
+  border: 4px solid #e979fa;
   position: relative;
   left: 85px;
   top: -5px;

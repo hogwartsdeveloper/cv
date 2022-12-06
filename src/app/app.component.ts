@@ -3,6 +3,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { NavigationService } from './services/navigation.service';
 import { LoaderService } from './services/loader.service';
 import { Subject, takeUntil, tap } from 'rxjs';
+import { DarkModeService } from './services/dark-mode.service';
 
 @Component({
   selector: 'app-root',
@@ -12,16 +13,19 @@ import { Subject, takeUntil, tap } from 'rxjs';
 export class AppComponent implements OnInit, OnDestroy {
   title = 'interactive-cv';
   loading: boolean = true;
+  isDarkMode: boolean = true;
   destroy$ = new Subject();
   constructor(
     private translateService: TranslateService,
     private navigationService: NavigationService,
-    private loadingService: LoaderService
+    private loadingService: LoaderService,
+    private darkModeService: DarkModeService
   ) {
     this.translateService.setDefaultLang('ru');
   }
 
   ngOnInit() {
+    this.getDarkMode();
     this.getBrowserLanguage();
     this.getWindowScroll();
     this.showLoading();
@@ -31,6 +35,22 @@ export class AppComponent implements OnInit, OnDestroy {
         takeUntil(this.destroy$)
       )
       .subscribe(() => this.showLoading());
+  }
+
+  getDarkMode() {
+    this.darkModeService.onDarkMode$
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((darkMode) => {
+        this.isDarkMode = darkMode;
+        this.addStyleDarkMode();
+      });
+
+    const dark = localStorage.getItem('dark');
+    if (!dark || !window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      this.isDarkMode = false;
+    }
+    this.addStyleDarkMode();
+    this.darkModeService.onDarkMode$.next(this.isDarkMode);
   }
   getBrowserLanguage() {
     const language = navigator.language;
@@ -58,6 +78,16 @@ export class AppComponent implements OnInit, OnDestroy {
     setTimeout(() => {
       this.loading = false;
     }, 2500);
+  }
+
+  addStyleDarkMode() {
+    if (this.isDarkMode) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('dark', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.removeItem('dark');
+    }
   }
 
   ngOnDestroy() {

@@ -6,7 +6,14 @@ import {
 } from './models/toolbar-item.model';
 import { IMedia, medias } from '../models/media.model';
 import { NavigationService } from '../services/navigation.service';
-import { debounceTime, distinctUntilChanged, Subject, takeUntil } from 'rxjs';
+import {
+  debounceTime,
+  distinctUntilChanged,
+  Subject,
+  take,
+  takeUntil,
+} from 'rxjs';
+import { DarkModeService } from '../services/dark-mode.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -14,21 +21,22 @@ import { debounceTime, distinctUntilChanged, Subject, takeUntil } from 'rxjs';
   styleUrls: ['./toolbar.component.scss'],
 })
 export class ToolbarComponent implements OnInit, OnDestroy {
-  isDarkMode: boolean = true;
+  isDarkMode: boolean;
   menuItems: IMenuLink[] = menuItems;
   openMenu: boolean = false;
   medias: IMedia[] = medias;
   activeNav: MenuNavigateEnum;
   destroy$ = new Subject();
 
-  constructor(private navigationService: NavigationService) {}
+  constructor(
+    private navigationService: NavigationService,
+    private darkModeService: DarkModeService
+  ) {}
 
   ngOnInit(): void {
-    const dark = localStorage.getItem('dark');
-    if (!dark) {
-      this.isDarkMode = false;
-    }
-    this.addStyleDarkMode();
+    this.darkModeService.onDarkMode$.pipe(take(1)).subscribe((darkMode) => {
+      this.isDarkMode = darkMode;
+    });
 
     this.navigationService.navigate$
       .pipe(debounceTime(300), distinctUntilChanged(), takeUntil(this.destroy$))
@@ -60,17 +68,7 @@ export class ToolbarComponent implements OnInit, OnDestroy {
 
   changeDarkMode() {
     this.isDarkMode = !this.isDarkMode;
-    this.addStyleDarkMode();
-  }
-
-  addStyleDarkMode() {
-    if (this.isDarkMode) {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('dark', 'dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.removeItem('dark');
-    }
+    this.darkModeService.onDarkMode$.next(this.isDarkMode);
   }
 
   ngOnDestroy() {
