@@ -5,11 +5,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainComponent } from './main/main.component';
 import { ToolbarModule } from './toolbar/toolbar.module';
-import {
-  HTTP_INTERCEPTORS,
-  HttpClient,
-  HttpClientModule,
-} from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ProjectsModule } from './projects/projects.module';
@@ -18,7 +14,6 @@ import { AboutMeComponent } from './about-me/about-me.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoaderComponent } from './ui/loader/loader.component';
-import { HttpRequestInterceptor } from './common/http-request.interceptor';
 
 @NgModule({
   declarations: [AppComponent],
@@ -43,11 +38,11 @@ import { HttpRequestInterceptor } from './common/http-request.interceptor';
     LoaderComponent,
   ],
   providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: HttpRequestInterceptor,
-      multi: true,
-    },
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: HttpRequestInterceptor,
+    //   multi: true,
+    // },
   ],
   bootstrap: [AppComponent],
 })

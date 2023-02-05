@@ -71,6 +71,8 @@ export class ToolbarComponent implements OnInit, OnDestroy {
     this.darkModeService.onDarkMode$.next(this.isDarkMode);
   }
 
+  public convertToPdf(): void {}
+
   ngOnDestroy() {
     this.destroy$.next(null);
     this.destroy$.complete();

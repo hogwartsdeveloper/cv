@@ -31,6 +31,9 @@
       >{{ "#" + (item.name | translate) }}</span
     >
     <app-language-select></app-language-select>
+    <button mat-icon-button (click)="convertToPdf()">
+      <span class="icon icon-cv"></span>
+    </button>
     <button mat-icon-button (click)="changeDarkMode()">
       <mat-icon *ngIf="!isDarkMode" class="text-amber-200">wb_sunny</mat-icon>
       <mat-icon *ngIf="isDarkMode" class="rotate-180 text-sky-400"

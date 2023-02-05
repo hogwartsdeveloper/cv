@@ -97,7 +97,6 @@ export class AppComponent implements OnInit, OnDestroy {
       localStorage.setItem('dark', 'white');
     }
   }
-
   ngOnDestroy() {
     this.destroy$.next(null);
     this.destroy$.complete();

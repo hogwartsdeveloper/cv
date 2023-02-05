@@ -22,15 +22,19 @@ line-height: 1;
 
 $icons-map: (
     "app": "\f101",
-    "email": "\f102",
-    "github": "\f103",
-    "linkedin": "\f104",
-    "menu-close": "\f105",
-    "menu": "\f106",
+    "cv": "\f102",
+    "email": "\f103",
+    "github": "\f104",
+    "linkedin": "\f105",
+    "menu-close": "\f106",
+    "menu": "\f107",
 );
 
         .icon-app:before {
     content: map-get($icons-map, "app");
+    }
+        .icon-cv:before {
+    content: map-get($icons-map, "cv");
     }
         .icon-email:before {
     content: map-get($icons-map, "email");

@@ -21,18 +21,21 @@ line-height: 1;
         .icon-app:before {
     content: "\f101";
     }
-        .icon-email:before {
+        .icon-cv:before {
     content: "\f102";
     }
-        .icon-github:before {
+        .icon-email:before {
     content: "\f103";
     }
-        .icon-linkedin:before {
+        .icon-github:before {
     content: "\f104";
     }
-        .icon-menu-close:before {
+        .icon-linkedin:before {
     content: "\f105";
     }
-        .icon-menu:before {
+        .icon-menu-close:before {
     content: "\f106";
+    }
+        .icon-menu:before {
+    content: "\f107";
     }
