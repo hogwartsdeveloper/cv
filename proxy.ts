@@ -1,1 +1,1 @@
-export const apiURL = 'http://back.sumurai.kz';
+export const apiURL = 'https://back.sumurai.kz';
