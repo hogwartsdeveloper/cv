@@ -1,1 +1,1 @@
-export const apiURL = 'http://localhost';
+export const apiURL = 'http://back.sumurai.kz';
