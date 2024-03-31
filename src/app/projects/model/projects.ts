@@ -2,6 +2,14 @@ import { IProject } from './project.model';
 
 export const projects: IProject[] = [
   {
+    img: 'assets/img/mandalorian.png',
+    techs: ['Three JS', 'TypeScript', 'Angular'],
+    title: 'project.mandalorian.title',
+    description: 'project.mandalorian.description',
+    live: 'https://ng-mando.netlify.app/',
+    code: 'https://github.com/hogwartsdeveloper/mandalorian'
+  },
+  {
     img: 'assets/img/tic-tac-toe.png',
     techs: ['HTML', 'SCSS', 'TypeScript', 'Angular'],
     title: 'project.tic-tac.title',
@@ -24,11 +32,11 @@ export const projects: IProject[] = [
     description: 'project.cloud-hub.description',
     code: 'https://github.com/hogwartsdeveloper/cloud_hub_back',
   },
-  {
-    img: 'assets/img/animal-pedia.jpeg',
-    techs: ['TypeScript', 'ReactNative', 'FireStore'],
-    title: 'project.animal.title',
-    description: 'project.animal.description',
-    code: 'https://github.com/hogwartsdeveloper/animal_pedia',
-  },
+  // {
+  //   img: 'assets/img/animal-pedia.jpeg',
+  //   techs: ['TypeScript', 'ReactNative', 'FireStore'],
+  //   title: 'project.animal.title',
+  //   description: 'project.animal.description',
+  //   code: 'https://github.com/hogwartsdeveloper/animal_pedia',
+  // },
 ];
