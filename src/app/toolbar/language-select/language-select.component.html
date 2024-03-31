@@ -1,7 +1,8 @@
-<div class="lang-menu pl-3">
+<div class="lang-menu pl-3" (mouseleave)="langMenu.style.display = 'none'">
   <div
     class="selected-lang justify-start sm:justify-between"
     [ngClass]="selectedLanguage.name"
+    (mousemove)="langMenu.style.display = 'block'"
   >
     {{ selectedLanguage.name }}
   </div>
