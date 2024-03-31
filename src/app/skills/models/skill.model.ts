@@ -5,7 +5,7 @@ export interface ISkill {
 
 export const language: ISkill = {
   title: 'skill.language',
-  skills: ['JavaScript', 'TypeScript'],
+  skills: ['C#', 'JavaScript', 'TypeScript'],
 };
 
 export const db: ISkill = {
@@ -15,15 +15,15 @@ export const db: ISkill = {
 
 export const frameworks: ISkill = {
   title: 'skill.framework',
-  skills: ['Angular', 'React'],
+  skills: ['.NET Core', 'Angular', 'React'],
 };
 
 export const other: ISkill = {
   title: 'skill.other',
-  skills: ['HTML', 'CSS', 'SCSS', 'SQL', 'Bash'],
+  skills: ['Docker', 'HTML', 'CSS', 'SCSS', 'SQL', 'Bash'],
 };
 
 export const tools: ISkill = {
   title: 'skill.tool',
-  skills: ['WebStorm', 'Git', 'Linux', 'Figma'],
+  skills: ['Rider', 'WebStorm', 'Git', 'Linux', 'Figma'],
 };
