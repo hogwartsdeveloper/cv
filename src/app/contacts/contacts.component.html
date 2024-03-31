@@ -11,6 +11,13 @@
         <div class="text-neutral-900 dark:text-white font-semibold">
           {{ "contact.contact" | translate }}
         </div>
+        <div class="hover:bg-fuchsia-500 contact-item" (click)="getTelegram()">
+          <span
+            class="icon icon-telegram text-neutral-900 dark:text-white"
+          ></span>
+          <p>@css_dev</p>
+        </div>
+
         <div class="hover:bg-fuchsia-500 contact-item" (click)="getLinkedin()">
           <span
             class="icon icon-linkedin text-neutral-900 dark:text-white"

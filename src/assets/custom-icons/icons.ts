@@ -5,7 +5,8 @@ export type IconsId =
   | 'github'
   | 'linkedin'
   | 'menu-close'
-  | 'menu';
+  | 'menu'
+  | 'telegram';
 
 export type IconsKey =
   | 'App'
@@ -14,7 +15,8 @@ export type IconsKey =
   | 'Github'
   | 'Linkedin'
   | 'MenuClose'
-  | 'Menu';
+  | 'Menu'
+  | 'Telegram';
 
 export enum Icons {
   App = 'app',
@@ -24,6 +26,7 @@ export enum Icons {
   Linkedin = 'linkedin',
   MenuClose = 'menu-close',
   Menu = 'menu',
+  Telegram = 'telegram',
 }
 
 export const ICONS_CODEPOINTS: { [key in Icons]: string } = {
@@ -34,4 +37,5 @@ export const ICONS_CODEPOINTS: { [key in Icons]: string } = {
   [Icons.Linkedin]: '61701',
   [Icons.MenuClose]: '61702',
   [Icons.Menu]: '61703',
+  [Icons.Telegram]: '61704',
 };

@@ -39,3 +39,6 @@ line-height: 1;
         .icon-menu:before {
     content: "\f107";
     }
+        .icon-telegram:before {
+    content: "\f108";
+    }

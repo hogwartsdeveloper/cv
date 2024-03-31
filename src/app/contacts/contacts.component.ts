@@ -63,8 +63,12 @@ export class ContactsComponent implements OnInit, AfterViewInit, OnDestroy {
       });
   }
 
+  getTelegram() {
+    window.open(medias[0].link, '_blank');
+  }
+
   getLinkedin() {
-    window.open(medias[1].link, '_blank');
+    window.open(medias[2].link, '_blank');
   }
 
   ngOnDestroy() {

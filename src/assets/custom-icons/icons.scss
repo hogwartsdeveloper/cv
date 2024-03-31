@@ -28,6 +28,7 @@ $icons-map: (
     "linkedin": "\f105",
     "menu-close": "\f106",
     "menu": "\f107",
+    "telegram": "\f108",
 );
 
         .icon-app:before {
@@ -50,4 +51,7 @@ $icons-map: (
     }
         .icon-menu:before {
     content: map-get($icons-map, "menu");
+    }
+        .icon-telegram:before {
+    content: map-get($icons-map, "telegram");
     }
