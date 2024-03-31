@@ -7,13 +7,13 @@
   },
   "main": {
     "title": "I'm",
-    "position": "software engineer",
-    "description": "I can create responsive websites where technology meets creativity",
+    "position": "full-stack developer",
+    "description": "I specialize in creating web applications using cutting-edge technologies and applying a creative approach to them.",
     "contactBtn": "Contact me !!",
     "thisMoment": "I am currently working on",
     "thisMomentPoint": "HardCode",
-    "quote": "With great power comes great electricity bill",
-    "quoteAuthor": "- D.r Who"
+    "quote": "If you're afraid - don't do it, - if you're doing it - don't be afraid!",
+    "quoteAuthor": "- Genghis Khan"
   },
   "section": {
     "projects": "projects",
@@ -46,15 +46,15 @@
   },
   "about-me": {
     "hello": "Hello, i’m Zhannur!",
-    "me": "I'm a software engineer in Kazakhstan. I can develop responsive websites from scratch and raise them into modern user-friendly web experiences.",
+    "me": "I'm a full-stack developer from Kazakhstan. My skills include not only creating web applications but also deploying them into production.",
     "me2": "I always strive to learn about the newest technologies and frameworks."
   },
   "contact": {
     "contact": "Message me here",
-    "text": "I'm interested in opportunities to grow in the backend. However, if you have another request or question, feel free to contact me."
+    "text": "I am interested in growth opportunities. However, if you have any other inquiries or questions, feel free to reach out to me."
   },
   "footer": {
-    "text": "Software developer based in Kazakhstan",
+    "text": "full-stack developer from Kazakhstan",
     "media": "Media"
   }
 }
