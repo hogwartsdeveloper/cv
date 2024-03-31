@@ -20,7 +20,7 @@ export const frameworks: ISkill = {
 
 export const other: ISkill = {
   title: 'skill.other',
-  skills: ['Docker', 'HTML', 'CSS', 'SCSS', 'SQL', 'Bash'],
+  skills: ['Docker', 'RabbitMQ', 'HTML', 'CSS', 'SCSS', 'SQL', 'Bash'],
 };
 
 export const tools: ISkill = {
