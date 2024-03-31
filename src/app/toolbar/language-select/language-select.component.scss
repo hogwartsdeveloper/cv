@@ -27,6 +27,10 @@
   list-style: none;
   display: flex;
   transition: 0.25s;
+
+  &:hover {
+    background-color: var(--select);
+  }
 }
 
 .lang-menu ul li div {

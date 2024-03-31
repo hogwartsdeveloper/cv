@@ -22,10 +22,10 @@
 
   <div class="hidden sm:flex items-center space-x-4">
     <span
-      class="px-3 py-2 rounded-md text-sm font-medium hover:bg-fuchsia-500 cursor-pointer"
+      class="menu-item px-3 py-2 rounded-md text-sm font-medium cursor-pointer"
       *ngFor="let item of menuItems; let index = index"
       [ngClass]="{
-        'bg-fuchsia-500': index + 1 === activeNav
+        'selected': index + 1 === activeNav
       }"
       (click)="click(item.id)"
       >{{ "#" + (item.name | translate) }}</span
@@ -64,7 +64,7 @@
       <a
         *ngFor="let media of medias"
         target="_blank"
-        class="text-4xl -mb-3 hover:text-fuchsia-400"
+        class="text-4xl -mb-3 media-item"
         [href]="media.link"
         [ngClass]="media.icon"
       ></a>
@@ -78,7 +78,7 @@
   <a
     *ngFor="let media of medias"
     target="_blank"
-    class="icon -mb-3 hover:text-fuchsia-400"
+    class="icon -mb-3 media-item"
     [href]="media.link"
     [ngClass]="media.icon"
   ></a>

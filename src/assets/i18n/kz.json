@@ -20,6 +20,10 @@
     "skills": "дағдылар"
   },
   "project": {
+    "habit": {
+      "title": "Habit",
+      "description": "Әдеттерді нығайтуға арналған қосымша."
+    },
     "mandalorian": {
       "title": "The Mandalorian",
       "description": "Шөлде нәресте Грогуды құтқару керек ойын."

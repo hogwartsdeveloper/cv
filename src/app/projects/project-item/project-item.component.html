@@ -22,16 +22,22 @@
     <p class="text-slate-600 dark:text-gray-400 mt-3.5">
       {{ project.description | translate }}
     </p>
-    <div class="flex space-x-4 mt-3">
+    <div class="flex flex-wrap gap-4 mt-3">
       <app-btn
         *ngIf="project?.live"
         [btnText]="'project.btn.live' | translate"
         (click)="followingLink(project.live)"
       ></app-btn>
       <app-btn
-        [btnText]="'project.btn.code' | translate"
+        [btnText]="'front-code'"
         [isGray]="true"
         (click)="followingLink(project.code)"
+      ></app-btn>
+      <app-btn
+        *ngIf="project?.backCode"
+        [btnText]="'back-code'"
+        [isGray]="true"
+        (click)="followingLink(project.backCode)"
       ></app-btn>
     </div>
   </div>

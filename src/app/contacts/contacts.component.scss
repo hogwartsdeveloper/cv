@@ -4,4 +4,9 @@
   cursor: pointer;
   transition: 0.4s;
   gap: 5px;
+
+  &:hover {
+    background-color: var(--select);
+    color: white;
+  }
 }

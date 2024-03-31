@@ -5,4 +5,5 @@ export interface IProject {
   description: string;
   live?: string;
   code: string;
+  backCode?: string;
 }

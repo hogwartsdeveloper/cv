@@ -80,8 +80,18 @@ body {
 body {
   font-family: "Fira Code", serif;
   font-size: 16px;
+
+  //--select: rgb(217 70 239);
+  --select: rgb(34 197 94);
+  --select2: rgb(74 222 128);
 }
 
 .icon {
   font-size: 28px;
+}
+
+.media-item {
+  &:hover {
+    color: var(--select2);
+  }
 }

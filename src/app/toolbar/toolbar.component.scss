@@ -2,6 +2,16 @@ a {
   transition: 0.4s;
 }
 
+.menu-item {
+  &:hover {
+    background-color: var(--select);
+  }
+
+  &.selected {
+    background-color: var(--select);
+  }
+}
+
 .toolbar {
   position: sticky;
   top: 0;

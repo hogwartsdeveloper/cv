@@ -20,6 +20,10 @@
     "skills": "навыки"
   },
   "project": {
+    "habit": {
+      "title": "Habit",
+      "description": "Приложение для закрепления привычек."
+    },
     "mandalorian": {
       "title": "The Mandalorian",
       "description": "Игра, в которой вам предстоит спасти малыша Грогу в пустыне."

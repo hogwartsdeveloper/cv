@@ -20,6 +20,10 @@
     "skills": "skills"
   },
   "project": {
+    "habit": {
+      "title": "Habit",
+      "description": "An application for strengthening habits."
+    },
     "mandalorian": {
       "title": "The Mandalorian",
       "description": "A game in which you have to save baby Grogu in the desert."
